@@ -61,4 +61,4 @@ jobs:
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
         run: |
-          pytest
+          pytest -s tests/login_tests.py
