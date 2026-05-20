@@ -117,7 +117,10 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
       - name: Install dependencies
-        run: playwright install --with-deps chromium
+        run:
+          pip install -r requirements.txt
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Run for HTML report
         run: pytest --html=report.html --self-contained-html -v
 
