@@ -129,6 +129,8 @@ jobs:
         run: python -m playwright install --with-deps chromium
 
       - name: Run for HTML report
+        env:
+          BASE_URL: ${{vars.BASE_URL}}
         run: pytest --html=report.html --self-contained-html -v
 
       - name: Test Artifact

@@ -1,13 +1,16 @@
 from playwright.sync_api import Page, expect
 import logging
 from utils.config_loader import Config
+import os
 
 config = Config()
+
 
 class BasePage:
     def __init__(self, page: Page):
         self.page = page
-        self.base_url = config.get("base_url")
+        # self.base_url = config.get("base_url")
+        self.base_url = os.getenv('BASE_URL')
 
     def go_to_url(self, path: str=""):
         """Navigate to base_url + optional path"""
