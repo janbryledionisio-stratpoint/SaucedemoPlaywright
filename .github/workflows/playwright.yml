@@ -150,6 +150,14 @@ jobs:
           path: videos/
           retention-days: 7
 
+      - name: Upload Traces
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: traces
+          path: traces/
+          retention-days: 7
+
       # TODO (Module 3): Set up Python 3.11 using actions/setup-python@v5
 
       # TODO (Module 3): Install dependencies from requirements.txt
