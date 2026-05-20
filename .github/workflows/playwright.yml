@@ -75,12 +75,12 @@ on:
 jobs:
 
   # ── Security Scan — Trivy ──────────────────────────────────────────────────
-  security-scan:
-    name: Security Scan (Trivy)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#  security-scan:
+#    name: Security Scan (Trivy)
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
 
       # TODO (Module 5): Add Trivy filesystem scan step
       # Use: aquasecurity/trivy-action@master
@@ -88,14 +88,14 @@ jobs:
       # Severity: CRITICAL,HIGH — set exit-code: 1 to block the pipeline
 
   # ── Code Quality — SonarCloud ──────────────────────────────────────────────
-  code-quality:
-    name: Code Quality (SonarCloud)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+#  code-quality:
+#    name: Code Quality (SonarCloud)
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0
 
       # TODO (Module 5): Add SonarCloud scan step
       # Use: SonarSource/sonarcloud-github-action@master
@@ -136,18 +136,18 @@ jobs:
       # Make sure it runs even when tests fail (if: always())
 
   # ── Playwright TypeScript ──────────────────────────────────────────────────
-  test-typescript:
-    name: Run Tests (TypeScript)
-    runs-on: ubuntu-latest
-    needs: [security-scan, code-quality]  # Quality gates must pass first
-
-    defaults:
-      run:
-        working-directory: playwright-typescript
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#  test-typescript:
+#    name: Run Tests (TypeScript)
+#    runs-on: ubuntu-latest
+#    needs: [security-scan, code-quality]  # Quality gates must pass first
+#
+#    defaults:
+#      run:
+#        working-directory: playwright-typescript
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v4
 
       # TODO (Module 3): Set up Node.js 20 using actions/setup-node@v4
 
