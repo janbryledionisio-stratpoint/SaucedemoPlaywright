@@ -1,6 +1,6 @@
 browser:
   type: "chrome"       # browser type: chrome, firefox, webkit
-  headless: false
+  headless: true
   slow_mo: 200         # milliseconds delay between actions
 base_url: "https://www.saucedemo.com"
 timeouts:
