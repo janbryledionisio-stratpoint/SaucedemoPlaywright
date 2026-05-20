@@ -124,10 +124,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install playwright
+
       - name: Install Playwright Browsers
         run: python -m playwright install --with-deps chromium
+
       - name: Run for HTML report
-        run: pytest
+        run: pytest --html=report.html --self-contained-html -v
+
+      - name: Test Artifact
+        run: actions/upload-artifact@v4
 
 
       # TODO (Module 3): Set up Python 3.11 using actions/setup-python@v5
