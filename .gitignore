@@ -1,0 +1,5 @@
+traces/
+.venv/
+pychache/
+report.html
+playwright-report/

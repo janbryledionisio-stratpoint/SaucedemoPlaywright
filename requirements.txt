@@ -1,0 +1,7 @@
+playwright
+pytest
+pytest-bdd
+pyyaml
+pytest-html
+openpyxl
+pandas
