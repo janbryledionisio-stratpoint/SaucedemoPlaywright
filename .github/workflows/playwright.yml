@@ -115,7 +115,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup Python
-        uses: actions/ actions/setup-python@v5
+        uses: actions/setup-python@v5
       - name: Install dependencies
         run: playwright install --with-deps chromium
       - name: Run for HTML report
