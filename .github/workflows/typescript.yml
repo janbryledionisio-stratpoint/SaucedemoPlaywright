@@ -9,9 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - run: echo${{vars.BASE_URL}}
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: echo${{vars.BASE_URL}}
         with:
           node-version: 22
       - name: Install dependencies
