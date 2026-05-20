@@ -8,6 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    environment: develop
     steps:
       - run: echo${{vars.BASE_URL}}
       - uses: actions/checkout@v4
