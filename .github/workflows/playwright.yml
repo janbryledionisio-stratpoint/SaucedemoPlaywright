@@ -105,6 +105,7 @@ jobs:
   test-python:
     name: Run Tests (Python)
     runs-on: ubuntu-latest
+    environment: develop
     #needs: [security-scan, code-quality]  # Quality gates must pass first
 
 #    defaults:
