@@ -11,6 +11,7 @@ jobs:
     environment: develop
     steps:
       - run: echo${{vars.BASE_URL}}
+      - run: echo${{secrets.PASSWORD}}
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
