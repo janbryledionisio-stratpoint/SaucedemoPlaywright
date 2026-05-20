@@ -134,7 +134,7 @@ jobs:
           BASE_URL: ${{vars.BASE_URL}}
         run: pytest --html=playwright-report/report.html --self-contained-html -v
 
-      - name: Test Artifact
+      - name: Upload Reports
         uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -142,6 +142,13 @@ jobs:
            path: playwright-report/
            retention-days: 7
 
+      - name: Upload Recordings
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: videos
+          path: videos/
+          retention-days: 7
 
       # TODO (Module 3): Set up Python 3.11 using actions/setup-python@v5
 

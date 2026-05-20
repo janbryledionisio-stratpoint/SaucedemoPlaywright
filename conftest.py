@@ -11,7 +11,10 @@ def browser_manager():
 @pytest.fixture(scope="function")
 def page(browser_manager, request):
     # Create a new browser context and page
-    context = browser_manager.new_context()
+    context = browser_manager.new_context(
+        record_video_dir="videos/",
+        record_video_size={"width": 1280, "height": 720}
+    )
     page = context.new_page()
 
     # Start tracing
